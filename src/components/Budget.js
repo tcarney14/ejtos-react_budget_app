@@ -1,10 +1,25 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 const Budget = () => {
-    const { budget } = useContext(AppContext);
+    const { dispatch, budget } = useContext(AppContext);
+    const updateBudget = (value) => {
+        dispatch({
+            type: "SET_BUDGET",
+            payload: value
+        }
+        )
+    }
     return (
         <div className='alert alert-secondary'>
-            <span>Budget: £{budget}</span>
+            <span>Budget: £
+                <input 
+                type="number"
+                value={budget}
+                step={10}
+                max={20000}
+                onChange={(event) => updateBudget(event.target.value)}>
+                </input>
+            </span>
         </div>
     );
 };
