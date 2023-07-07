@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
+import './Components.css';
 const Currency = () => {
     const { dispatch } = useContext(AppContext);
     const updateCurrency = (value) => {
@@ -10,18 +11,16 @@ const Currency = () => {
         )
     }
     return (
-        <div className='alert alert-secondary' id='currency'>
-            <span>
+        <div className='currency'>
                 Currency:
-                <select
+                <select className='dropdown'
                 onChange={(event) => updateCurrency(event.target.value)}>
-                    <option value={"dollar"}>$ Dollar</option>
-                    <option value={"pound"}>£ Pound</option>
-                    <option value={"euro"}>€ Euro</option>
-                    <option value={"ruppee"}>₹ Ruppee</option>
+                    <option value={"£"}>£ Pound</option>
+                    <option value={"$"}>$ Dollar</option>
+                    <option value={"€"}>€ Euro</option>
+                    <option value={"₹"}>₹ Ruppee</option>
                     
                 </select>
-            </span>
         </div>
     );
 };
