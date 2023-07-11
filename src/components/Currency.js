@@ -12,14 +12,14 @@ const Currency = () => {
     }
     return (
         <div className='currency'>
-                Currency:
+                Currency
                 <select className='dropdown'
                 onChange={(event) => updateCurrency(event.target.value)}>
                     <option value={"£"}>£ Pound</option>
                     <option value={"$"}>$ Dollar</option>
                     <option value={"€"}>€ Euro</option>
                     <option value={"₹"}>₹ Ruppee</option>
-                    
+                    Currency
                 </select>
         </div>
     );
